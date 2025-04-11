@@ -1,0 +1,52 @@
+.sidebar {
+	position: relative;
+	top: 40px;
+	right: 0;
+	width: 300px;
+	height: 100%;
+	background-color: #fff;
+	box-shadow: -2px 0 8px rgba(0, 0, 0, 0.2);
+	padding: 20px;
+	animation-duration: 0.3s;
+	animation-fill-mode: forwards;
+
+
+	h3 {
+		margin-top: 0;
+	}
+
+	.closeBtn {
+		margin-top: 20px;
+		background-color: #f44336;
+		color: white;
+		border: none;
+		padding: 8px 12px;
+		border-radius: 4px;
+		cursor: pointer;
+	}
+}
+
+.slideIn {
+	animation-name: slideIn;
+}
+
+@keyframes slideIn {
+	from {
+		transform: translateX(100%);
+	}
+
+	to {
+		transform: translateX(0);
+	}
+}
+
+.invoiceList {
+	padding-left: 1rem;
+	list-style: none;
+}
+
+.invoiceItem {
+	margin-bottom: 1rem;
+	border-bottom: 1px solid #ddd;
+	padding-bottom: 0.5rem;
+}

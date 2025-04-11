@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import styles from './RegisterForm.module.scss';
+import { useNavigate } from 'react-router-dom';
+
 
 function RegisterForm() {
 	const [formData, setFormData] = useState({
@@ -14,6 +16,7 @@ function RegisterForm() {
 	});
 
 	const [passwordMatch, setPasswordMatch] = useState(true);
+	const navigate = useNavigate()
 
 	const handleChange = (e) => {
 		const { name, value } = e.target;
@@ -50,7 +53,7 @@ function RegisterForm() {
 			if (response.ok) {
 				alert('Đăng ký thành công!');
 				console.log(result);
-				// Optional: reset form
+				// reset form
 				setFormData({
 					username: '',
 					fullname: '',
@@ -61,6 +64,7 @@ function RegisterForm() {
 					confirmPassword: '',
 					role: ''
 				});
+				navigate('/login');
 			} else {
 				alert(result.message || 'Đăng ký thất bại!');
 			}
