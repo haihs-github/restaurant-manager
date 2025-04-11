@@ -1,25 +1,30 @@
-// backend/server.js
 const express = require('express');
-const mongoose = require('mongoose');
 const cors = require('cors');
-require('dotenv').config();
-
+const connectDB = require('./config/db'); 
 const app = express();
-app.use(cors());
+const authRoutes = require('./routes/authRoutes');
+// Middleware
+const corsOptions = {
+	origin: 'http://localhost:3000', 
+	credentials: true,
+  };
+  
+app.use(cors(corsOptions));
 app.use(express.json());
-
+// Routes
 app.get('/', (req, res) => {
-	res.send('Hello from backend!');
+  res.send('Hello from backend!');
 });
 
-// Kết nối MongoDB
-mongoose.connect(process.env.MONGO_URI)
-	.then(() => {
-		console.log('Connected to MongoDB');
-		app.listen(5000, () => console.log('Server running on port 5000'));
-	})
-	.catch(err => console.error(err));
 
-const tableRoutes = require('./routes/tableRoutes');
-app.use('/api/tables', tableRoutes);
+app.use('/api/auth', authRoutes);
+// Kết nối DB và khởi động server
+const PORT = process.env.PORT || 5000;
 
+connectDB().then(() => {
+  app.listen(PORT, () => {
+    console.log(`🚀 Server running on port ${PORT}`);
+  });
+}).catch(err => {
+  console.error('❌ Failed to start server due to MongoDB error:', err);
+});
