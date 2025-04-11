@@ -1,10 +1,11 @@
 import Header from "../../layout/Header";
+import LoginForm from "../../components/LoginForm";
 
 function Login() {
 	return (
 		<div>
 			<Header />
-			login
+			<LoginForm />
 		</div>
 	);
 }
