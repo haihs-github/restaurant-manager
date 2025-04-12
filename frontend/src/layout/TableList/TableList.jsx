@@ -38,16 +38,33 @@ function TableList() {
 		setNewTable({ name: "", capacity: "", status: "available" });
 	};
 
+	const handleUpdateTable = (updatedTable) => {
+		setTables(prevTables =>
+			prevTables.map(table =>
+				table.id === updatedTable.id ? { ...table, ...updatedTable } : table
+			)
+		);
+	};
+
 	return (
 		<div className={styles.container}>
 			<h3 className={styles.heading}>Danh sách bàn</h3>
 			<div className={styles.grid}>
 				<AddButton handleAddClick={handleAddClick} />
 
-				{showForm && <AddTableForm handleChange={handleChange} handleSubmit={handleSubmit} newTable={newTable} handleCloseForm={() => setShowForm(false)} />}
-
+				{showForm && <AddTableForm
+					handleChange={handleChange}
+					handleSubmit={handleSubmit}
+					newTable={newTable}
+					handleCloseForm={() => setShowForm(false)}
+				/>}
 				{tables.map((table) => (
-					<TableListItem table={table} key={table.id} />
+					<TableListItem
+						table={table}
+						key={table.id}
+						tables={tables}
+						handleUpdateTable={handleUpdateTable}
+					/>
 				))}
 			</div>
 		</div>
