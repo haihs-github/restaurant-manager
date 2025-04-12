@@ -23,6 +23,9 @@ function Header() {
 				<NavLink to="/booking" className={styles.link}>
 					Đặt bàn
 				</NavLink>
+				<NavLink to="/revicedbooking" className={styles.link}>
+					Yêu cầu đặt bàn
+				</NavLink>
 				<NavLink to="/report" className={styles.link}>
 					thống kê
 				</NavLink>

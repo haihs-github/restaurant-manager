@@ -4,7 +4,7 @@ import { useTable } from '../../context/TableContext';
 import EditTableForm from '../EditTableForm/EditTableForm';
 import { useState } from 'react';
 
-function TableListItem({ table, tables, handleUpdateTable }) {
+function TableListItem({ table, tables, handleUpdateTable, button }) {
 	// const handleStartService = () => {
 	// 	setStatus('in service');
 	// };
@@ -27,9 +27,13 @@ function TableListItem({ table, tables, handleUpdateTable }) {
 					{/* <div className={`${styles.status} ${styles[status.replace(/\s/g, '')]}`}>
 						{status}
 					</div> */}
-					<button className={styles.bookBtn} onClick={showTableHistory}>
-						Xem lịch sử phục vụ
-					</button>
+					{button ? <button className={styles.bookBtn} onClick={() => handleUpdateTable(table)}>
+						Đánh dấu khách đã ăn xong
+					</button> :
+						<button className={styles.bookBtn} onClick={showTableHistory}>
+							Xem lịch sử phục vụ
+						</button>
+					}
 				</div>
 			}
 			{showEditTableForm && <EditTableForm

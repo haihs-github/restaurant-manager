@@ -1,0 +1,66 @@
+.wrapper {
+	padding-top: 40px;
+}
+
+.invoiceTable {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.invoiceTable th,
+.invoiceTable td {
+	border: 1px solid #ccc;
+	padding: 8px;
+	text-align: center;
+}
+
+.invoiceTable th {
+	background-color: #f4f4f4;
+}
+
+.wrapper {
+	padding: 16px;
+}
+
+.invoiceTable {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.invoiceTable th,
+.invoiceTable td {
+	padding: 8px 12px;
+	border: 1px solid #ccc;
+	text-align: left;
+}
+
+.confirmed {
+	background-color: #e6f7e6; // màu nền xanh nhạt cho đã duyệt
+}
+
+.notConfirmed {
+	background-color: #ffe6e6; // màu nền đỏ nhạt cho chưa duyệt
+}
+
+.confirmBtn {
+	padding: 4px 10px;
+	background-color: #ffcccc;
+	border: 1px solid #cc0000;
+	color: #cc0000;
+	border-radius: 4px;
+	cursor: pointer;
+	transition: background-color 0.2s;
+
+	&:hover {
+		background-color: #ff9999;
+	}
+}
+
+.confirmedBtn {
+	padding: 4px 10px;
+	background-color: #d9fdd3;
+	border: 1px solid #48a63b;
+	color: #2e6f24;
+	border-radius: 4px;
+	cursor: default;
+}
