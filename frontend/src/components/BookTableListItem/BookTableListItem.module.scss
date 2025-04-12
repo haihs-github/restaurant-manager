@@ -1,0 +1,124 @@
+.card {
+	width: 160px;
+	padding: 12px;
+	border-radius: 12px;
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+	background-color: #fff;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 6px;
+}
+
+.id {
+	font-size: 14px;
+	color: #999;
+}
+
+.name {
+	font-size: 18px;
+	font-weight: 600;
+	color: #333;
+}
+
+.capacity {
+	font-size: 14px;
+	color: #555;
+}
+
+.status {
+	padding: 4px 8px;
+	border-radius: 6px;
+	font-size: 13px;
+	font-weight: 500;
+	text-transform: capitalize;
+}
+
+.available {
+	background-color: #e6f7e6;
+	color: #2e7d32;
+}
+
+.booked {
+	background-color: #fff3cd;
+	color: #b48b00;
+}
+
+.inservice {
+	background-color: #e0f0ff;
+	color: #0277bd;
+}
+
+.bookBtn {
+	margin-top: auto;
+	align-self: stretch;
+	padding: 6px 0;
+	background-color: #4caf50;
+	color: white;
+	border: none;
+	border-radius: 6px;
+	cursor: pointer;
+	transition: background-color 0.2s;
+	font-size: 14px;
+}
+
+.bookBtn:hover {
+	background-color: #388e3c;
+}
+
+.editBtn {
+	position: absolute;
+	top: 8px;
+	right: 8px;
+	background: none;
+	border: none;
+	cursor: pointer;
+	font-size: 14px;
+	color: #555;
+	transition: color 0.2s;
+}
+
+.editBtn:hover {
+	color: #000;
+}
+
+
+.filterForm {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	margin-bottom: 1.5rem;
+	flex-wrap: wrap;
+
+	label {
+		display: flex;
+		flex-direction: column;
+		font-weight: 500;
+		color: #333;
+
+		select,
+		input[type="date"] {
+			margin-top: 0.3rem;
+			padding: 0.4rem 0.6rem;
+			border: 1px solid #ccc;
+			border-radius: 4px;
+			font-size: 1rem;
+		}
+	}
+}
+
+.searchButton {
+	background-color: #3498db;
+	color: white;
+	padding: 0.5rem 1rem;
+	border: none;
+	border-radius: 6px;
+	cursor: pointer;
+	font-weight: 600;
+	transition: background-color 0.2s ease;
+
+	&:hover {
+		background-color: #2980b9;
+	}
+}

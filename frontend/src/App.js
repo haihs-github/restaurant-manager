@@ -3,6 +3,7 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import Home from './pages/Home';
 import Table from './pages/Table';
+import Booking from './pages/Booking';
 
 export default function App() {
   return (
@@ -12,6 +13,7 @@ export default function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/table" element={<Table />} />
+        <Route path="/booking" element={<Booking />} />
         <Route path="/contact" element={<Login />} />
       </Routes>
     </BrowserRouter>

@@ -20,6 +20,9 @@ function Header() {
 				<NavLink to="/dishes" className={styles.link}>
 					Thực đơn
 				</NavLink>
+				<NavLink to="/booking" className={styles.link}>
+					Đặt bàn
+				</NavLink>
 				<NavLink to="/report" className={styles.link}>
 					thống kê
 				</NavLink>
